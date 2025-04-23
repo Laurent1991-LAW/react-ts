@@ -11,8 +11,17 @@ import {
 } from '@mui/material';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import CloseIcon from '@mui/icons-material/Close';
+import { useStore } from './useStore'
 
 const ImageUploadComponent: React.FC = () => {
+
+    const {
+        idOnEdit,
+        setIdOnEdit,
+        noteLst,
+        setNoteLst
+    } = useStore((state) => state);
+
     const [imageFiles, setImageFiles] = useState<File[]>([]);
     const [imageGallery, setImageGallery] = useState<File[]>([]);
     const [openUploadDialog, setOpenUploadDialog] = useState(false);
